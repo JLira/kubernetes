@@ -1,0 +1,11 @@
+total 4
+-rw-rw-r-- 1 lira lira    0 dez 11 20:50 erro.txt
+-rwxrwxr-x 1 lira lira 1118 dez 11 20:49 nescolas.txt
+-rw-rw-r-- 1 lira lira    0 dez 11 20:56 saida.txt
+total 8
+-rw-rw-r-- 1 lira lira    0 dez 11 20:50 erro.txt
+-rwxrwxr-x 1 lira lira 1118 dez 11 20:49 nescolas.txt
+-rw-rw-r-- 1 lira lira  163 dez 11 20:56 saida.txt
+erro.txt
+nescolas.txt
+saida.txt

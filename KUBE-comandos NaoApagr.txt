@@ -1,0 +1,42 @@
+Criar maq virtual
+>multipass launch -n k8s -c 2 -m 2gb -d 20gb
+após instalado verifique as maquinas virtuais
+>multipass list
+pode entrar na vm e utilizar o comando:
+>multipass shell k8s
+ou pode executar a vm de fora pelo so
+>multipass exec k8s --cat teste.txt
+montar um diretorio
+>multipass mount path k8s:/externo
+>mutltipass shell k8s
+Informações com mais detalhes sobre determinada vm
+>multipass info k8s
+Caso não queira mais ustilizar a vm delete
+>multipass delete k8s
+Após o delete list as vm,será mostrado que a vm não foi apagada, mas marcada para exclusaõ
+podendo ainda ser recuperada
+>multipass list
+Desta forma para recuperar a vm, digite 
+>multipass recover k8s
+PARA INICIAR A VM
+>multipass start k8s
+PARA EXCLUIR DE VEZ A VM
+>multipass purge
+*******************************************************************
+MULTIPASS COM MICROK8S
+1A COISA É CRIA UMA VM
+>multipass launch -n k8s -c 2 -m 2G -d 20G
+COM A MAQUINA CRIADA, INSTALE O MICROK8S
+>multipass exec k8s -- sudo snap install microk8s --classic --channel=1.18/stable
+CRIAR O USUARIO UBUNTU PARA A VM
+>multipass exec k8s -- sudo usermod -a -G microk8s ubuntu
+DAR PERMISSAO AO USUARIO UBUNTU PARA ACESSAR O KUBERNETS
+>multipass exec k8s -- sudo chown -f -R ubuntu ~/.kube
+AQUI DA PAU PQ NÃO EXISTE ESSE ARQ
+multipass exec k8s -- /snap/bin/microk8s.kubectl create deployment nginx --image=nginx
+multipass exec k8s -- /snap/bin/microk8s.kubectl get pods
+PRA ACESSAR REMOTAMENTE
+>multipass exec k8s -- /snap/bin/microk8s.kubectl config view --raw
+ABRIR O .KUBE LOCAL E EDITAR O CONFIG
+
+
